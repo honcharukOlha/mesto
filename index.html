@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="pages/index.css">
+    <meta name="author" content="Ольга Гончарук">
+    <title>Место</title>
+    <script src="script.js">
+    </script>
+</head>
+
+<body class="root">
+    <div class="page">
+        <header class="header">
+            <img src="images/logo.svg" class="header__logo" alt="Логотип сайта">
+
+        </header>
+
+        <main class="content">
+            <section class="profile">
+                <img src="images/kusto.jpg" class="profile__avatar" alt="Фото, которое вы сами выберете">
+                <div class="profile-info">
+                    <div class="profile__info-nowrap">
+                        <h2 class="profile-info__name">Жак-Ив Кусто</h2>
+                        <button class="profile-info__button"></button>
+                    </div>
+                    <p class="profile-info__activity">Исследователь океана</p>
+                </div>
+                <button class="add-button"></button>
+            </section>
+
+            <section class="elements">
+                <div class="element">
+                    <img src="images/foto1.jpg" class="element__image element__image_transform" alt="Италия. Прогулки на лодке меж домов.">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Италия. Прогулки по воде.</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img src="images/foto2.jpg" class="element__image" alt="Ночной город. Человек прогуливается под зонтом.">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Прогулка в пасмурный вечер</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img src="images/foto3.jpg" class="element__image element__image_transform" alt="Медуза невероятной красоты. Предположительно сцифоидная медуза">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Медуза</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img src="images/foto4.jpg" class="element__image" alt="Дом в брирежном районе курортного городишки с декоративными кустами вокруг">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Дом с идеальными пропорциями</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img src="images/foto5.jpg" class="element__image" alt="Причал">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Причал</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img src="images/foto6.jpg" class="element__image" alt="Старинное здание, а вокруг горы и лес">
+                    <div class="element__nowrap">
+                        <h3 class="element__text">Велопрогулки по Парижу</h3>
+                        <div>
+                            <button class="element__button"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright" lang="en">&copy; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+
+    <div class="popup popup_opened">
+        <div class="popup__container">
+            <form class="popup__profile">
+                <h3 class="popup__heading">Редактировать профиль</h3>
+                <input type="text" name="header" class="popup__name" min="5" max="50" value="Жак-Ив Кусто" placeholder="Заголовок" required></input>
+                <input type="text" name="activity" class="popup__activity" min="10" max="100" value="Исследователь океана" placeholder="Род деятельности" required></input>
+                <input type="submit" name="submit" class="popup__button" value="Сохранить" onclick="alert('click')"></input>
+            </form>
+            <button class="popup__button-close" type="button"></button>
+        </div>
+
+    </div>
+</body>

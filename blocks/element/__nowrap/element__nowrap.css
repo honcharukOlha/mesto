@@ -1,0 +1,8 @@
+.element__nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 246px;
+    margin: 25px 15px 31px 21px;
+    padding: 0;
+}
