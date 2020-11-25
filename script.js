@@ -1,7 +1,44 @@
 // Находим форму в DOM
-let popupOpened = document.querySelector('.popup_opened');
-let popupContainer = popupOpened.querySelector('.popup__container');
-let formElement = popupContainer.querySelector('.popup__profile');
+//let popupOpened = document.querySelector('.popup_opened');
+//let popupContainer = popupOpened.querySelector('.popup__container');
+//let formElement = popupContainer.querySelector('.popup__profile');
+
+let profileName = document.querySelector('.profile-info__name');
+let profileActivity = document.querySelector('.profile-info__activity');
+let popupName = document.querySelector('.popup__name');
+let popupActivity = document.querySelector('.popup__activity');
+let nameInput = document.querySelector('.popup__name');
+let jobInput = document.querySelector('.popup__activity');
+
+function handlePopupEvent(showPopup) {
+    let popup = document.querySelector('.popup');
+    if (showPopup) {
+        // показываем попап
+        popup.classList.add('popup_opened');
+        popupName.placeholder = profileName.textContent;
+        popupActivity.placeholder = profileActivity.textContent;
+    } else {
+        // закрываем попап
+        popup.classList.remove('popup_opened');
+        nameInput.value = "";
+        jobInput.value = "";
+    }
+}
+
+// Находим кнопку открытия попапа
+let profileInfoButton = document.querySelector('.profile-info__button');
+profileInfoButton.addEventListener("click", function() {
+    handlePopupEvent(true)
+})
+
+// Находим кнопку закрытия попапа
+let popupCloseButton = document.querySelector('.popup__button-close');
+popupCloseButton.addEventListener("click", function() {
+    handlePopupEvent(false)
+})
+
+// Находим форму попапа
+let popupForm = document.querySelector('.popup__profile');
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -9,30 +46,12 @@ function formSubmitHandler(evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     // Так мы можем определить свою логику отправки.
     // О том, как это делать, расскажем позже.
+    profileName.textContent = nameInput.value;
+    profileActivity.textContent = jobInput.value;
 
-    // Находим поля формы в DOM
-    let nameInput = document.querySelector('.popup__name');
-    // Воспользуйтесь инструментом .querySelector()
-    let jobInput = document.querySelector('.popup__activity');
-    // Воспользуйтесь инструментом .querySelector()
-
-    console.log(nameInput.value, jobInput.value);
-
-    // Получите значение полей из свойства value
-    paragraph.textContent = nameInput.value;
-    paragraph.textContent = jobInput.value;
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    let paragraph = document.querySelector('.popup__name');
-    console.log(paragraph.textContent);
-    paragraph.textContent = 'ФИО деятеля';
-
-    let paragraph = document.querySelector('.popup__activity');
-    console.log(paragraph.textContent);
-    paragraph.textContent = 'Род деятельности';
-
+    handlePopupEvent(false)
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler);
+popupForm.addEventListener('submit', formSubmitHandler);

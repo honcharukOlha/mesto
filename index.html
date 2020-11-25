@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="pages/index.css">
     <meta name="author" content="Ольга Гончарук">
     <title>Место</title>
-    <script src="script.js">
+    <script src="script.js" defer>
     </script>
 </head>
 
@@ -99,13 +99,13 @@
         </footer>
     </div>
 
-    <div class="popup popup_opened">
+    <div class="popup">
         <div class="popup__container">
             <form class="popup__profile">
                 <h3 class="popup__heading">Редактировать профиль</h3>
-                <input type="text" name="header" class="popup__name" min="5" max="50" value="Жак-Ив Кусто" placeholder="Заголовок" required></input>
-                <input type="text" name="activity" class="popup__activity" min="10" max="100" value="Исследователь океана" placeholder="Род деятельности" required></input>
-                <input type="submit" name="submit" class="popup__button" value="Сохранить" onclick="alert('click')"></input>
+                <input type="text" name="header" class="popup__name" min="5" max="50" placeholder="Заголовок" required></input>
+                <input type="text" name="activity" class="popup__activity" min="10" max="100" placeholder="Род деятельности" required></input>
+                <input type="submit" name="submit" class="popup__button" value="Сохранить"></input>
             </form>
             <button class="popup__button-close" type="button"></button>
         </div>
