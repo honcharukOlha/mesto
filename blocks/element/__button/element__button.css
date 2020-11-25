@@ -3,7 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 21px;
-    height: 18px;
+    min-height: 18px;
     margin: 6px 1px 0 2px;
     background-color: #ffffff;
     border: none;

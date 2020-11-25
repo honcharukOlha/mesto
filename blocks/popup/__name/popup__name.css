@@ -1,6 +1,6 @@
 .popup__name {
     width: 358px;
-    height: 14px;
+    min-height: 14px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
