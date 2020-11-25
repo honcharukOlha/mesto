@@ -23,8 +23,8 @@
 
 
 
-[Ссылка на проект в Git Pages](https://honcharukolha.github.io/russian-travel/)
+[Ссылка на проект в Git Pages](https://honcharukolha.github.io/mesto/)
 
 ## To do 
 
-* Перевести страницу на иностранный язык.
+* Отрефакторить js.
