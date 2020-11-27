@@ -1,15 +1,15 @@
 .element__button {
     background-image: url(../../../images/heart.svg);
-    background-position: 50%;
-    object-position: bottom;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 21px;
-    height: 18px;
-    margin: 0;
+    min-width: 21px;
+    margin: 5px 1px 0 0;
     padding: 0;
-    background-color: transparent;
+    background-color: #ffffff;
     border: none;
-    transition: opacity .5s linear .1s;
+    outline: none;
+    transition: opacity .5s linear .1s
 }
 
 .element__button:hover {
