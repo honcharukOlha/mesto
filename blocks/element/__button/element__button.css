@@ -9,7 +9,7 @@
     background-color: #ffffff;
     border: none;
     outline: none;
-    transition: opacity .5s linear .1s
+    transition: opacity .5s linear .1s;
 }
 
 .element__button:hover {
