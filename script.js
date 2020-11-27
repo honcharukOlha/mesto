@@ -1,9 +1,9 @@
 let profileName = document.querySelector('.profile-info__name');
 let profileActivity = document.querySelector('.profile-info__activity');
-let popupName = document.querySelector('.popup__name');
-let popupActivity = document.querySelector('.popup__activity');
-let nameInput = document.querySelector('.popup__name');
-let jobInput = document.querySelector('.popup__activity');
+let popupName = document.querySelector('.popup__text_name');
+let popupActivity = document.querySelector('.popup__text_activity');
+let nameInput = document.querySelector('.popup__text_name');
+let jobInput = document.querySelector('.popup__text_activity');
 
 function handlePopupEvent(showPopup) {
     let popup = document.querySelector('.popup');

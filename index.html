@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="pages/index.css">
     <meta name="author" content="Ольга Гончарук">
     <title>Место</title>
-    <script src="script.js" defer>
-    </script>
 </head>
 
 <body class="root">
@@ -22,13 +20,13 @@
             <section class="profile">
                 <img src="images/kusto.jpg" class="profile__avatar" alt="Фото, которое вы сами выберете">
                 <div class="profile-info">
-                    <div class="profile__info-nowrap">
+                    <div class="profile-info__nowrap">
                         <h1 class="profile-info__name">Жак-Ив Кусто</h1>
-                        <button class="profile-info__button"></button>
+                        <button type="button" class="profile-info__button"></button>
                     </div>
                     <p class="profile-info__activity">Исследователь океана</p>
                 </div>
-                <button class="add-button"></button>
+                <button type="button" class="add-button"></button>
             </section>
 
             <section class="elements">
@@ -36,9 +34,7 @@
                     <img src="images/foto1.jpg" class="element__image element__image_transform" alt="Италия. Прогулки на лодке меж домов.">
                     <div class="element__nowrap">
                         <h3 class="element__text">Италия. Прогулки по воде.</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
 
@@ -46,9 +42,7 @@
                     <img src="images/foto2.jpg" class="element__image" alt="Ночной город. Человек прогуливается под зонтом.">
                     <div class="element__nowrap">
                         <h3 class="element__text">Прогулка в пасмурный вечер</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
 
@@ -56,9 +50,7 @@
                     <img src="images/foto3.jpg" class="element__image element__image_transform" alt="Медуза невероятной красоты. Предположительно сцифоидная медуза">
                     <div class="element__nowrap">
                         <h3 class="element__text">Медуза</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
 
@@ -66,9 +58,7 @@
                     <img src="images/foto4.jpg" class="element__image" alt="Дом в брирежном районе курортного городишки с декоративными кустами вокруг">
                     <div class="element__nowrap">
                         <h3 class="element__text">Дом с идеальными пропорциями</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
 
@@ -76,9 +66,7 @@
                     <img src="images/foto5.jpg" class="element__image" alt="Причал">
                     <div class="element__nowrap">
                         <h3 class="element__text">Причал</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
 
@@ -86,9 +74,7 @@
                     <img src="images/foto6.jpg" class="element__image" alt="Старинное здание, а вокруг горы и лес">
                     <div class="element__nowrap">
                         <h3 class="element__text">Велопрогулки по Парижу</h3>
-                        <div>
-                            <button class="element__button"></button>
-                        </div>
+                        <button class="element__button"></button>
                     </div>
                 </div>
             </section>
@@ -101,16 +87,19 @@
 
     <div class="popup">
         <div class="popup__container">
-            <form class="popup__profile">
-                <h3 class="popup__heading">Редактировать профиль</h3>
-                <input type="text" name="header" class="popup__name" min="5" max="50" placeholder="Заголовок" required>
-                <input type="text" name="activity" class="popup__activity" min="10" max="100" placeholder="Род деятельности" required>
-                <input type="submit" name="submit" class="popup__button" value="Сохранить">
+            <form name="popup-form" class="popup__profile">
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <input type="text" class="popup__text popup__text_name" value="Жак-Ив Кусто" placeholder="Заголовок" required>
+                <input type="text" class="popup__text popup__text_activity" value="Исследователь океана" placeholder="Деятельность" required>
+                <input type="submit" class="popup__button" value="Сохранить">
             </form>
             <button class="popup__button-close" type="button"></button>
         </div>
-
     </div>
+
+    <script src="script.js">
+    </script>
+
 </body>
 
 </html>

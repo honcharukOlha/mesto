@@ -1,13 +1,14 @@
 .element__button {
     background-image: url(../../../images/heart.svg);
-    background-position: center;
+    background-position: 50%;
+    object-position: bottom;
     background-repeat: no-repeat;
     width: 21px;
-    min-height: 18px;
-    margin: 6px 1px 0 2px;
-    background-color: #ffffff;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
     border: none;
-    outline: none;
     transition: opacity .5s linear .1s;
 }
 
