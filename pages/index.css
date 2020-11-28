@@ -7,7 +7,7 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile-info/profile-info.css);
-@import url(../blocks/profile-info/__nowrap/profile__info-nowrap.css);
+@import url(../blocks/profile-info/__nowrap/profile-info__nowrap.css);
 @import url(../blocks/profile-info/__activity/profile-info__activity.css);
 @import url(../blocks/profile-info/__button/profile-info__button.css);
 @import url(../blocks/profile-info/__name/profile-info__name.css);

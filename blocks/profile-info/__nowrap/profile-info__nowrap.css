@@ -1,0 +1,10 @@
+.profile-info__nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 900px) {
+    .profile-info__nowrap {
+        text-align: center;
+    }
+}
