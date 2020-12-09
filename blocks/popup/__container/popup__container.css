@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     max-width: 430px;
+    min-height: 330px;
     margin: auto;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }

@@ -15,9 +15,3 @@
 .element__button:hover {
     opacity: .5;
 }
-
-.element__button:active {
-    transition: none;
-    opacity: 1;
-    background-image: url(../../../images/heart_black.svg);
-}
