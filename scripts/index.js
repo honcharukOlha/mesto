@@ -29,20 +29,20 @@ let profileActivity = document.querySelector('.profile-info__activity');
 let nameInput = document.querySelector('.popup__text_name_author');
 let jobInput = document.querySelector('.popup__text_name_activity');
 let popupOpenEdit = document.querySelector('.popup_open_edit')
-let popupForm = document.querySelector('.popup_form_edit');
-let popupFormAdd = document.querySelector('.popup_form_add');
+let popupForm = document.querySelector('.popup__form_element_edit');
+let popupFormAdd = document.querySelector('.popup__form_element_add');
 let profileInfoButton = document.querySelector('.profile-info__button');
-let popupCloseEdit = document.querySelector('.popup_close_edit');
+let popupCloseEdit = document.querySelector('.popup__button_close_edit');
 let elementsContainer = document.querySelector('.elements');
 let addButton = document.querySelector('.add-button');
 let descriptionInput = document.querySelector('.popup__text_name_description');
 let linkInput = document.querySelector('.popup__text_name_link');
 let popupOpenAdd = document.querySelector('.popup_open_add')
-let popupCloseAdd = document.querySelector('.popup_close_add');
+let popupCloseAdd = document.querySelector('.popup__button_close_add');
 let popupOpenPicture = document.querySelector('.popup_open_picture');
 let popupPicture = document.querySelector('.popup__picture');
 let popupDescrition = document.querySelector('.popup__description');
-let popupClosePicture = document.querySelector('.popup_close_picture');
+let popupClosePicture = document.querySelector('.popup__button_close_picture');
 
 
 // Откываем попап редактирования профиля
