@@ -46,7 +46,7 @@
                 <input type="text" name="activity" class="popup__text popup__text_name_activity" value="Исследователь океана" placeholder="Деятельность" required>
                 <input type="submit" class="popup__button" value="Сохранить">
             </form>
-            <button class="popup__button-close popup__button_close_edit" type="button"></button>
+            <button class="popup__close popup__close_window_edit" type="button"></button>
         </div>
     </div>
 
@@ -58,21 +58,21 @@
                 <input type="text" name="activity" class="popup__text popup__text_name_link" value="" placeholder="Ссылка на картинку" required>
                 <input type="submit" class="popup__button popup__button_create_card" value="Создать">
             </form>
-            <button class="popup__button-close popup__button_close_add" type="button"></button>
+            <button class="popup__close popup__close_window_add" type="button"></button>
         </div>
     </div>
 
     <div class="popup popup_open_picture">
         <div class="popup__open-card">
-            <img class="popup__picture">
+            <img class="popup__picture" alt="Подставляем фото" src="">
             <p class="popup__description"></p>
-            <button class="popup__button-close popup__button_close_picture"></button>
+            <button class="popup__close popup__close_window_picture"></button>
         </div>
     </div>
 
     <template id="card-template">
     <div class="element">
-        <img class="element__image">
+        <img class="element__image" alt="Подставляем фото" src="">
         <div class="element__nowrap">
             <h3 class="element__text"></h3>
             <button type="button" class="element__button"></button>
