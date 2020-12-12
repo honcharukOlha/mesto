@@ -55,7 +55,7 @@
             <form name="popup-item-form" class="popup__form popup__form_element_add">
                 <h2 class="popup__heading">Новое место</h2>
                 <input type="text" name="authot" class="popup__text popup__text_name_description" value="" placeholder="Название" required>
-                <input type="text" name="activity" class="popup__text popup__text_name_link" value="" placeholder="Ссылка на картинку" required>
+                <input type="url" name="activity" class="popup__text popup__text_name_link" value="" placeholder="Ссылка на картинку" required>
                 <input type="submit" class="popup__button popup__button_create_card" value="Создать">
             </form>
             <button class="popup__close popup__close_window_add" type="button"></button>
@@ -71,14 +71,14 @@
     </div>
 
     <template id="card-template">
-    <div class="element">
+    <li class="element">
         <img class="element__image" alt="Подставляем изображение" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg">
         <div class="element__nowrap">
             <h3 class="element__text"></h3>
             <button type="button" class="element__button"></button>
         </div>
         <button type="button" class="element__basket"></button>
-    </div>
+    </li>
     </template>
 
     <script src="scripts/index.js">
