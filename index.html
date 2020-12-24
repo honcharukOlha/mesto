@@ -41,14 +41,12 @@
     <div class="popup popup_open_edit">
         <div class="popup__container">
             <form name="popup-form" class="popup__form popup__form_element_edit">
-                <fieldset class="popup__set">
-                    <h2 class="popup__heading">Редактировать профиль</h2>
-                    <input type="text" name="author" id="text-input-author" class="popup__text popup__text_name_author" value="Жак-Ив Кусто" placeholder="Имя" minlength="2" maxlength="40" required>
-                    <span class="popup__text-error popup__text-error_active text-input-author-error"></span>
-                    <input type="text" name="activity" id="text-input-activity" class="popup__text popup__text_name_activity" value="Исследователь океана" placeholder="О себе" minlength="2" maxlength="200" required>
-                    <span class="popup__text-error popup__text-error_active text-input-activity-error"></span>
-                    <input type="submit" class="popup__button popup__button" value="Сохранить">
-                </fieldset>
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <input type="text" name="author" id="text-input-author" class="popup__text popup__text_name_author" value="Жак-Ив Кусто" placeholder="Имя" minlength="2" maxlength="40" required>
+                <span class="popup__text-error popup__text-error_active" id="text-input-author-error"></span>
+                <input type="text" name="activity" id="text-input-activity" class="popup__text popup__text_name_activity" value="Исследователь океана" placeholder="О себе" minlength="2" maxlength="200" required>
+                <span class="popup__text-error popup__text-error_active" id="text-input-activity-error"></span>
+                <input type="submit" class="popup__button popup__button" value="Сохранить">
             </form>
             <button class="popup__close popup__close_window_edit" type="button"></button>
 
@@ -58,14 +56,12 @@
     <div class="popup popup_open_add">
         <div class="popup__container">
             <form name="popup-item-form" class="popup__form popup__form_element_add" novalidate>
-                <fieldset class="popup__set">
-                    <h2 class="popup__heading">Новое место</h2>
-                    <input type="text" name="description" id="text-input-description" class="popup__text popup__text_name_description" value="" placeholder="Название" minlength="2" maxlength="30" required>
-                    <span class="popup__text-error popup__text-error_active text-input-description-error"></span>
-                    <input type="url" name="link" id="url-input-link" class="popup__text popup__text_name_link" value="" placeholder="Ссылка на картинку" required>
-                    <span class="popup__text-error popup__text-error_active url-input-link-error"></span>
-                    <input type="submit" class="popup__button popup__button_create_card" value="Создать">
-                </fieldset>
+                <h2 class="popup__heading">Новое место</h2>
+                <input type="text" name="description" id="text-input-description" class="popup__text popup__text_name_description" value="" placeholder="Название" minlength="2" maxlength="30" required>
+                <span class="popup__text-error popup__text-error_active" id="text-input-description-error"></span>
+                <input type="url" name="link" id="url-input-link" class="popup__text popup__text_name_link" value="" placeholder="Ссылка на картинку" required>
+                <span class="popup__text-error popup__text-error_active" id="url-input-link-error"></span>
+                <input type="submit" class="popup__button popup__button_create_card" value="Создать">
             </form>
             <button class="popup__close popup__close_window_add" type="button"></button>
         </div>

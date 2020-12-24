@@ -136,3 +136,21 @@ initialCards.forEach(function(card) {
     const cardElement = createCard(card.name, card.link);
     addCard(elementsContainer, cardElement);
 });
+
+const modalWindows = document.querySelectorAll('.popup');
+modalWindows.forEach((modalWindow) => {
+    modalWindow.addEventListener("click", (evt) => {
+        if (evt.target.classList.contains('popup')) {
+            hidePopup(modalWindow);
+        }
+    });
+});
+
+window.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+        const currentModalWindow = document.querySelector('.popup_opened');
+        if (currentModalWindow) {
+            hidePopup(currentModalWindow);
+        }
+    }
+})
