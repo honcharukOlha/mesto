@@ -44,15 +44,25 @@ const popupPicture = document.querySelector('.popup__picture');
 const popupDescrition = document.querySelector('.popup__description');
 const popupClosePicture = document.querySelector('.popup__close_window_picture');
 
+const hidePopupByEsc = (evt) => {
+    if (evt.key === 'Escape') {
+        const currentModalWindow = document.querySelector('.popup_opened');
+        if (currentModalWindow) {
+            hidePopup(currentModalWindow);
+        }
+    }
+}
 
 // Откываем попап редактирования профиля
 function showPopup(modalWindow) {
     modalWindow.classList.add('popup_opened');
+    window.addEventListener('keydown', hidePopupByEsc);
 }
 
 // Закрываем попап редактирования профиля
 function hidePopup(modalWindow) {
     modalWindow.classList.remove('popup_opened');
+    window.removeEventListener('keydown', hidePopupByEsc);
 }
 
 // Обработчик «отправки» формы, хотя пока   
@@ -145,12 +155,3 @@ modalWindows.forEach((modalWindow) => {
         }
     });
 });
-
-window.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-        const currentModalWindow = document.querySelector('.popup_opened');
-        if (currentModalWindow) {
-            hidePopup(currentModalWindow);
-        }
-    }
-})
