@@ -89,6 +89,7 @@ function formSubmitHandler(evt) {
     hidePopup(popupOpenEdit);
 }
 
+// Отработка события создания карточки
 function addCardSubmitHandler(evt) {
     evt.preventDefault();
     const cardData = { name: descriptionInput.value, link: linkInput.value };

@@ -22,6 +22,7 @@ export class FormValidator {
         input.classList.remove(this._inputErrorClass);
     }
 
+    // Валидируем инпут
     _checkInputValidity(input) {
         if (!input.validity.valid) {
             this._showError(input);
@@ -30,6 +31,7 @@ export class FormValidator {
         }
     }
 
+    // Проставляем состояние кнопки
     _setButtonState() {
         const submitButton = this._form.querySelector(this._submitButtonSelector);
         const isActive = this._form.checkValidity()
@@ -42,6 +44,7 @@ export class FormValidator {
         }
     }
 
+    // Проставляем слушателей инпутов
     _setEventListeners() {
         const inputsList = this._form.querySelectorAll(this._inputSelector);
 
