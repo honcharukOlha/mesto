@@ -1,3 +1,6 @@
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+
 const initialCards = [{
         name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -24,6 +27,14 @@ const initialCards = [{
     }
 ];
 
+const validationConfig = {
+    inputSelector: '.popup__text',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_inactive',
+    inputErrorClass: 'popup__text_invalid',
+    errorClass: 'popup__text-error_active'
+};
+
 const profileName = document.querySelector('.profile-info__name');
 const profileActivity = document.querySelector('.profile-info__activity');
 const nameInput = document.querySelector('.popup__text_name_author');
@@ -39,10 +50,12 @@ const descriptionInput = document.querySelector('.popup__text_name_description')
 const linkInput = document.querySelector('.popup__text_name_link');
 const popupOpenAdd = document.querySelector('.popup_open_add')
 const popupCloseAdd = document.querySelector('.popup__close_window_add');
-const popupOpenPicture = document.querySelector('.popup_open_picture');
-const popupPicture = document.querySelector('.popup__picture');
-const popupDescrition = document.querySelector('.popup__description');
+export const popupOpenPicture = document.querySelector('.popup_open_picture');
+export const popupPicture = document.querySelector('.popup__picture');
+export const popupDescrition = document.querySelector('.popup__description');
 const popupClosePicture = document.querySelector('.popup__close_window_picture');
+const cardTemplateSelector = '#card-template';
+const forms = document.querySelectorAll('.popup__form');
 
 const hidePopupByEsc = (evt) => {
     if (evt.key === 'Escape') {
@@ -54,7 +67,7 @@ const hidePopupByEsc = (evt) => {
 }
 
 // Откываем попап редактирования профиля
-function showPopup(modalWindow) {
+export function showPopup(modalWindow) {
     modalWindow.classList.add('popup_opened');
     window.addEventListener('keydown', hidePopupByEsc);
 }
@@ -78,35 +91,11 @@ function formSubmitHandler(evt) {
 
 function addCardSubmitHandler(evt) {
     evt.preventDefault();
-    const cardElement = createCard(descriptionInput.value, linkInput.value);
+    const cardData = { name: descriptionInput.value, link: linkInput.value };
+    const cardElement = new Card(cardData, cardTemplateSelector).generateCard();
     addCard(elementsContainer, cardElement);
     hidePopup(popupOpenAdd);
     popupFormAdd.reset();
-}
-
-function createCard(name, link) {
-    const cardTemplate = document.querySelector('#card-template').content;
-    const elementCard = cardTemplate.cloneNode(true);
-    const likeButton = elementCard.querySelector('.element__button');
-    const removeButton = elementCard.querySelector('.element__basket');
-    const image = elementCard.querySelector('.element__image');
-
-    image.src = link;
-    image.alt = name;
-    elementCard.querySelector('.element__text').textContent = name;
-    likeButton.addEventListener('click', function() {
-        likeButton.classList.toggle('element__button_active')
-    });
-    removeButton.addEventListener('click', function() {
-        removeButton.parentElement.remove();
-    });
-    image.addEventListener('click', function() {
-        showPopup(popupOpenPicture);
-        popupPicture.src = link;
-        popupPicture.alt = name;
-        popupDescrition.textContent = name;
-    });
-    return elementCard;
 }
 
 function addCard(container, cardElement) {
@@ -142,8 +131,12 @@ popupForm.addEventListener('submit', formSubmitHandler);
 
 popupFormAdd.addEventListener('submit', addCardSubmitHandler);
 
-initialCards.forEach(function(card) {
-    const cardElement = createCard(card.name, card.link);
+// Создаем карточки всех элементов массива 
+initialCards.forEach((item) => {
+    // Создаем карточку
+    const card = new Card(item, cardTemplateSelector);
+    const cardElement = card.generateCard()
+        // Добавляем в DOM
     addCard(elementsContainer, cardElement);
 });
 
@@ -154,4 +147,8 @@ modalWindows.forEach((modalWindow) => {
             hidePopup(modalWindow);
         }
     });
+});
+
+forms.forEach((form) => {
+    new FormValidator(validationConfig, form).enableValidation();
 });
