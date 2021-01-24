@@ -1,4 +1,4 @@
-import { showPopup, popupOpenPicture, popupPicture, popupDescrition } from './index.js'
+import { showPopup, popupOpenPicture, popupPicture, popupDescrition, } from './utils.js';
 
 export class Card {
     constructor(data, cardSelector) {
@@ -56,8 +56,9 @@ export class Card {
     generateCard() {
         this._element = this._getTemplate();
         this._setEventListeners();
-        this._element.querySelector('.element__image').src = this._link;
-        this._element.querySelector('.element__image').alt = this._link;
+        const image = this._element.querySelector('.element__image');
+        image.src = this._link;
+        image.alt = this._link;
         this._element.querySelector('.element__text').textContent = this._name;
 
         return this._element;

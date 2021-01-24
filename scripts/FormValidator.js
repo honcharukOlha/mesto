@@ -56,10 +56,12 @@ export class FormValidator {
         });
     }
 
-
     // Включаем валидацию
     enableValidation() {
         this._setEventListeners();
         this._setButtonState();
+        this._form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+        })
     }
 }
