@@ -1,0 +1,23 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "Вашему вниманию представлен пример интерактивной страницы, куда можно добавлять фотографии, удалять их и ставить лайки.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honcharukOlha/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/honcharukOlha/mesto/issues"
+  },
+  "homepage": "https://github.com/honcharukOlha/mesto#readme",
+  "keywords": [],
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
