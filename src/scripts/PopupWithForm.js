@@ -9,10 +9,11 @@ export class PopupWithForm extends Popup {
 
     _getInputValues() {
         const inputValues = {};
-        const inputs = this._popup.querySelectorAll('input[type="text, url"]');
+        const inputs = this._popup.querySelectorAll('.popup__text');
         inputs.forEach((input) => {
-            inputValues[input.id] = input.textContent;
+            inputValues[input.id] = input.value;
         });
+        console.log(inputValues);
         return inputValues;
     }
 
