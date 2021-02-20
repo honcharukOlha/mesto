@@ -47,6 +47,7 @@
                 <input type="text" name="activity" id="text-input-activity" class="popup__text popup__text_name_activity" value="Исследователь океана" placeholder="О себе" minlength="2" maxlength="200" required>
                 <span class="popup__text-error popup__text-error_active" id="text-input-activity-error"></span>
                 <input type="submit" class="popup__button popup__button" value="Сохранить">
+                <input type="submit" class="popup__button popup__button_ellipsis" value="Сохранение...">
             </form>
             <button class="popup__close popup__close_window_edit" type="button"></button>
 
@@ -75,15 +76,42 @@
         </div>
     </div>
 
-    <template id="card-template">
-    <li class="element">
-        <img class="element__image" alt="Подставляем изображение" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg">
-        <div class="element__nowrap">
-            <h3 class="element__text"></h3>
-            <button type="button" class="element__button"></button>
+    <div class="popup popup_open_confirmation">
+        <div class="popup__container">
+            <form name="popup-form-confirmation" class="popup__form popup__form_element_confirmation" novalidate>
+                <h2 class="popup__heading">Вы уверены?</h2>
+                <input type="submit" class="popup__button popup__button_confirmation" value="Да">
+            </form>
+            <button class="popup__close popup__close_window_confirmation" type="button"></button>
         </div>
-        <button type="button" class="element__basket"></button>
-    </li>
+    </div>
+
+    <div class="popup popup_edit_image">
+        <div class="popup__container">
+            <form name="popup-form-edit-image" class="popup__form popup__form_element_image" novalidate>
+                <h2 class="popup__heading">Обновить аватар</h2>
+                <input type="url" name="link-image" id="url-input-link" class="popup__text popup__text_name_image" value="" placeholder="Ссылка на картинку" required>
+                <span class="popup__text-error popup__text-error_active" id="url-input-link-error"></span>
+                <input type="submit" class="popup__button popup__button_edit_image" value="Сохранить">
+                <input type="submit" class="popup__button popup__button_ellipsis" value="Сохранение...">
+            </form>
+            <button class="popup__close popup__close_edit_image" type="button"></button>
+        </div>
+    </div>
+
+    <template id="card-template">
+        <li class="element">
+            <img class="element__image" alt="Подставляем изображение"
+                src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg">
+            <div class="element__nowrap">
+                <h3 class="element__text"></h3>
+                <div class="element__wrap">
+                <button type="button" class="element__button"></button>
+                <p class="element__like">0</p>
+            </div>
+            </div>
+            <button type="button" class="element__basket"></button>
+        </li>
     </template>
 
     <script type="module" src="scripts/index.js">
