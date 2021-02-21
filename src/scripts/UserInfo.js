@@ -7,7 +7,7 @@ export class UserInfo {
     getUserInfo() {
         return {
             profileName: this._nameElement.textContent,
-            profileJob: this._jobElement.textContent
+            profileJob: this._jobElement.textContent,
         };
     }
 

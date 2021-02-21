@@ -17,7 +17,7 @@ export class FormValidator {
 
     _hideError(input) {
         const error = this._form.querySelector(`#${input.id}-error`);
-        error.textContent = "";
+        error.textContent = '';
         input.classList.remove(this._errorClass);
         input.classList.remove(this._inputErrorClass);
     }
@@ -49,7 +49,7 @@ export class FormValidator {
         const inputsList = this._form.querySelectorAll(this._inputSelector);
 
         inputsList.forEach((input) => {
-            input.addEventListener("input", () => {
+            input.addEventListener('input', () => {
                 this._checkInputValidity(input);
                 this._setButtonState();
             });
@@ -60,7 +60,7 @@ export class FormValidator {
     enableValidation() {
         this._setEventListeners();
         this._setButtonState();
-        this._form.addEventListener("submit", (evt) => {
+        this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
         });
     }

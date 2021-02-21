@@ -6,58 +6,55 @@ export class Api {
 
     getInitialCards() {
         return fetch(`${this.baseUrl}/cards`, {
-                headers: this.headers
-            })
-            .then(this._handleResult)
+            headers: this.headers,
+        }).then(this._handleResult);
     }
 
     getUserInfo() {
         return fetch(`${this.baseUrl}/users/me`, {
-                headers: this.headers
-            })
-            .then(this._handleResult)
+            headers: this.headers,
+        }).then(this._handleResult);
     }
 
     setUserInfo(newName, newAbout) {
         return fetch(`${this.baseUrl}/users/me`, {
-                method: 'PATCH',
-                headers: this.headers,
-                body: JSON.stringify({
-                    name: newName,
-                    about: newAbout
-                })
-            })
-            .then(this._handleResult)
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify({
+                name: newName,
+                about: newAbout,
+            }),
+        }).then(this._handleResult);
     }
 
     addNewCard(name, link) {
         return fetch(`${this.baseUrl}/cards`, {
-                method: 'POST',
-                headers: this.headers,
-                body: JSON.stringify({
-                    name: name,
-                    link: link
-                })
-            })
-            .then(this._handleResult)
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify({
+                name: name,
+                link: link,
+            }),
+        }).then(this._handleResult);
     }
 
     deleteCard(cardId) {
         console.log(cardId);
         return fetch(`${this.baseUrl}/cards/${cardId}`, {
             method: 'DELETE',
-            headers: this.headers
+            headers: this.headers,
         }).then(this._handleResult);
     }
 
     toggleLike(isLike, cardId) {
         let method = 'PUT';
-        if (!isLike) { method = 'DELETE' }
+        if (!isLike) {
+            method = 'DELETE';
+        }
         return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
-                method: method,
-                headers: this.headers
-            })
-            .then(this._handleResult)
+            method: method,
+            headers: this.headers,
+        }).then(this._handleResult);
     }
 
     changeAvatar(avatar) {
@@ -65,12 +62,10 @@ export class Api {
             method: 'PATCH',
             headers: this.headers,
             body: JSON.stringify({
-                avatar: avatar
-            })
-        }).then(this._handleResult)
+                avatar: avatar,
+            }),
+        }).then(this._handleResult);
     }
-
-
 
     _handleResult(res) {
         if (res.ok) {
