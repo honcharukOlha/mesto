@@ -19,6 +19,9 @@
         <main class="content">
             <section class="profile">
                 <img src="images/kusto.jpg" class="profile__avatar" alt="Фото, которое вы сами выберете">
+                <div class="profile__edits">
+                    <div class="profile__edit"></div>
+                </div>
                 <div class="profile-info">
                     <div class="profile-info__nowrap">
                         <h1 class="profile-info__name">Жак-Ив Кусто</h1>
@@ -86,14 +89,13 @@
         </div>
     </div>
 
-    <div class="popup popup_edit_image">
+    <div class="popup popup_change_avatar">
         <div class="popup__container">
-            <form name="popup-form-edit-image" class="popup__form popup__form_element_image" novalidate>
+            <form name="popup-form-edit-image" class="popup__form popup__form_element_avatar" novalidate>
                 <h2 class="popup__heading">Обновить аватар</h2>
-                <input type="url" name="link-image" id="url-input-link" class="popup__text popup__text_name_image" value="" placeholder="Ссылка на картинку" required>
-                <span class="popup__text-error popup__text-error_active" id="url-input-link-error"></span>
+                <input type="url" name="link-image" id="avatar-input-link" class="popup__text popup__text_name_image" value="" placeholder="Ссылка на картинку" required>
+                <span class="popup__text-error popup__text-error_active" id="avatar-input-link-error"></span>
                 <input type="submit" class="popup__button popup__button_edit_image" value="Сохранить">
-                <input type="submit" class="popup__button popup__button_ellipsis" value="Сохранение...">
             </form>
             <button class="popup__close popup__close_edit_image" type="button"></button>
         </div>

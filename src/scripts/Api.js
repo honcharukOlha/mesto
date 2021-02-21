@@ -42,6 +42,34 @@ export class Api {
             .then(this._handleResult)
     }
 
+    deleteCard(cardId) {
+        console.log(cardId);
+        return fetch(`${this.baseUrl}/cards/${cardId}`, {
+            method: 'DELETE',
+            headers: this.headers
+        }).then(this._handleResult);
+    }
+
+    toggleLike(isLike, cardId) {
+        let method = 'PUT';
+        if (!isLike) { method = 'DELETE' }
+        return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+                method: method,
+                headers: this.headers
+            })
+            .then(this._handleResult)
+    }
+
+    changeAvatar(avatar) {
+        return fetch(`${this.baseUrl}/users/me/avatar`, {
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify({
+                avatar: avatar
+            })
+        }).then(this._handleResult)
+    }
+
 
 
     _handleResult(res) {
