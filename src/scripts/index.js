@@ -6,6 +6,7 @@ import { PopupWithForm } from './PopupWithForm.js';
 import { UserInfo } from './UserInfo.js';
 import { Api } from './Api.js';
 import { PopupWithSubmit } from './PopupWithSubmit.js';
+import '../pages/index.css';
 
 let currentUserId = -1;
 
