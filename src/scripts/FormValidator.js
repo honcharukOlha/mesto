@@ -47,7 +47,12 @@ export class FormValidator {
     // Проставляем слушателей инпутов
     _setEventListeners() {
         const inputsList = this._form.querySelectorAll(this._inputSelector);
-
+        this._form.addEventListener('reset', () => {
+            inputsList.forEach((inputElement) => {
+                this._hideError(inputElement);
+                this._setButtonState();
+            });
+        });
         inputsList.forEach((input) => {
             input.addEventListener('input', () => {
                 this._checkInputValidity(input);

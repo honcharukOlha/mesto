@@ -31,7 +31,6 @@ const nameInput = document.querySelector('.popup__text_name_author');
 const jobInput = document.querySelector('.popup__text_name_activity');
 const profileInfoButton = document.querySelector('.profile-info__button');
 const addButton = document.querySelector('.add-button');
-const profileAvatar = document.querySelector('.profile__avatar');
 
 const profileFormValidator = new FormValidator(
     validationConfig,
@@ -51,6 +50,7 @@ const changeAvatarValidator = new FormValidator(
 const userInfo = new UserInfo({
     profileNameSelector: '.profile-info__name',
     profileJobSelector: '.profile-info__activity',
+    profileAvatarSelector: '.profile__avatar',
 });
 
 const popupImage = new PopupWithImage('.popup_open_picture');
@@ -80,6 +80,7 @@ const profileForm = new PopupWithForm(
         api
             .setUserInfo(data.profileName, data.profileJob)
             .then((res) => {
+                data.profileAvatar = res.avatar;
                 userInfo.setUserInfo(data);
             })
             .catch((err) => {
@@ -100,7 +101,12 @@ const changeAvatarForm = new PopupWithForm(
         api
             .changeAvatar(urlAvatar)
             .then((res) => {
-                profileAvatar.src = res.avatar;
+                const data = {
+                    profileName: res.name,
+                    profileJob: res.about,
+                    profileAvatar: res.avatar,
+                };
+                userInfo.setUserInfo(data);
             })
             .catch((err) => {
                 console.log(err);
@@ -169,19 +175,6 @@ document
         changeAvatarForm.open();
     });
 
-const modalWindows = document.querySelectorAll('.popup');
-modalWindows.forEach((modalWindow) => {
-    modalWindow.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup')) {
-            popupImage.close();
-            profileForm.close();
-            cardForm.close();
-            popupSubmit.close();
-            changeAvatarForm.close();
-        }
-    });
-});
-
 profileFormValidator.enableValidation();
 cardFormValidator.enableValidation();
 changeAvatarValidator.enableValidation();
@@ -194,9 +187,9 @@ api
         const data = {
             profileName: res.name,
             profileJob: res.about,
+            profileAvatar: res.avatar,
         };
         userInfo.setUserInfo(data);
-        profileAvatar.src = res.avatar;
         currentUserId = res._id;
         api
             .getInitialCards()

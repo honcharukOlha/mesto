@@ -21,7 +21,14 @@ export class Popup {
         }
     }
 
+    _handleModalClick(evt) {
+        if (evt.target.classList.contains('popup')) {
+            this.close();
+        }
+    }
+
     setEventListeners() {
         this._popupCloseButton.addEventListener('click', this.close.bind(this));
+        this._popup.addEventListener('click', this._handleModalClick.bind(this));
     }
 }
